@@ -60,7 +60,6 @@
                 <version>${spring-boot.version}</version>
                 <configuration>
                     <mainClass>com.quanht.demospringboot.DemoSpringBootApplication</mainClass>
-                    <skip>true</skip>
                 </configuration>
                 <executions>
                     <execution>
