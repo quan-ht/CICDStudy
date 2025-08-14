@@ -1,14 +1,25 @@
 <script setup>
 import HelloWorld from './components/HelloWorld.vue'
 import TheWelcome from './components/TheWelcome.vue'
+
+const fetchData = async () => {
+  try {
+    const response = await fetch('http://localhost:8100/hello');
+    const data = await response.text();
+    alert(data);
+  } catch (error) {
+    alert('请求失败: ' + error.message);
+  }
+}
 </script>
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+    <img alt="Vue logo" class="logo" height="125" src="./assets/logo.svg" width="125" />
 
     <div class="wrapper">
       <HelloWorld msg="You did it!" />
+      <button @click="fetchData">请求接口</button>
     </div>
   </header>
 

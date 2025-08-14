@@ -2,6 +2,7 @@ package com.quanht.demospringboot;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,6 +11,7 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyEmitter
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/")
 @SpringBootApplication
@@ -17,6 +19,14 @@ public class DemoSpringBootApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(DemoSpringBootApplication.class, args);
+	}
+
+	/**
+	 * http://localhost:8100/hello
+	 */
+	@RequestMapping(value = "/hello", method = RequestMethod.GET)
+	public String index() {
+		return "Hello Wold";
 	}
 
 	/**
