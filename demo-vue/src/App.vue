@@ -4,7 +4,7 @@ import TheWelcome from './components/TheWelcome.vue'
 
 const fetchData = async () => {
   try {
-    const response = await fetch('http://localhost:8100/hello');
+    const response = await fetch('http://192.168.232.129:8100/hello');
     const data = await response.text();
     alert(data);
   } catch (error) {
